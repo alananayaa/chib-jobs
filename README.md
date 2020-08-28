@@ -18,3 +18,9 @@ dirigete a la carpeta de chib-jobs
 corre npm install para instalar las dependencias del front
 npm start para arrancar tu servidor frontend
 
+## Pasos para registrarse en la aplicacion
+1. Dar clic en Sign up en la parte de arriba a la derecha
+2. Llenar los datos que te piden
+3. Iniciar Sesion
+4. Terminar de llenar los datos que te pidan
+5. Darle en Continuar

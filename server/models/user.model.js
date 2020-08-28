@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const { StaticRouter } = require('react-router-dom')
 
 const Schema = mongoose.Schema
 
@@ -23,7 +22,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    birtDate: {
+    birthDate: {
         type: String,
         required: true,
     },

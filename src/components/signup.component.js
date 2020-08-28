@@ -1,6 +1,16 @@
 import React, { Component } from "react"
+import axios from 'axios'
+
 
 export default class SignUp extends Component {
+
+    constructor (props) {
+        super(props)
+        this.state = {
+            phoneNumber: ''
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
 
     handleSubmit(event) {
         event.preventDefault()
@@ -9,6 +19,23 @@ export default class SignUp extends Component {
             return
         }
         const form = event.target
+
+        const newUser = {
+            phoneNumber: form.elements['phoneNumber'].value,
+            password: form.elements['password'].value,
+            birthDate: form.elements['birthDate'].value,
+            firstName: form.elements['firstName'].value,
+            lastName: form.elements['lastName'].value
+        }
+        
+        axios.post('http://localhost:5000/users/add', newUser)
+        .then(res => {
+            alert(res.data)
+            window.location = '/'
+        })
+        .catch(err => {
+            console.log(`Error: ${err}`)
+        })
         
     }
 
@@ -40,7 +67,7 @@ export default class SignUp extends Component {
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Al menos 8 caracteres" pattern='.{8,}' required/>
+                    <input type="password" name='password' className="form-control" placeholder="Al menos 8 caracteres" pattern='.{8,}' required/>
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block">Sign Up</button>

@@ -8,11 +8,8 @@ import SignUp from './components/signup.component'
 import Profile from './components/profile.component'
 
 const App = props => {
-  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true)
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
-
-  //alert("Bienvenido a Chib Jobs, \nPor favor inicia sesión o registrate para darte de alta como trabajador")
 
   return ( 
   <Router>

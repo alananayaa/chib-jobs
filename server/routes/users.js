@@ -9,6 +9,12 @@ router.route('/:id').get((req, res) => {
     .catch(err => res.status(400).json(`Error: ${err}`))
 })
 
+router.route('/').get((req, res) => {
+    User.find()
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json(`Error: ${err}`))
+})
+
 router.route('/add').post((req, res) => {
     const phoneNumber = Number(req.body.phoneNumber)
     const plainPassword = req.body.password

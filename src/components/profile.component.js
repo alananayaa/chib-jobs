@@ -25,7 +25,7 @@ export default class Profile extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:5000/users/${this.state.id}`)
+        axios.get(`https://wise-happy-ferryboat.glitch.me/users/${this.state.id}`)
         .then(res => {
             this.setState({
                 fullName: `${res.data.firstName} ${res.data.lastName}`,

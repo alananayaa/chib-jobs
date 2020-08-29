@@ -21,7 +21,7 @@ export default class Login extends Component {
             password: form.elements['password'].value
         }
 
-        axios.post('http://localhost:5000/users/login', login).then(res => {
+        axios.post('https://wise-happy-ferryboat.glitch.me/users/login', login).then(res => {
             window.location = `/profile#${res.data}`
         }).catch(err => {
             console.log(`Error: ${err}`)

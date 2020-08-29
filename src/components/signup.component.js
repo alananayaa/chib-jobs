@@ -28,7 +28,7 @@ export default class SignUp extends Component {
             lastName: form.elements['lastName'].value
         }
         
-        axios.post('http://localhost:5000/users/add', newUser)
+        axios.post('https://wise-happy-ferryboat.glitch.me/users/add', newUser)
         .then(res => {
             alert(res.data)
             window.location = '/'

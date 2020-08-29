@@ -70,7 +70,7 @@ export default class Profile extends Component {
             jobDescription: this.state.jobDescription,
             priceRate: Number(this.state.priceRate)
         }
-        axios.put(`http://localhost:5000/users/update/${this.state.id}`, user)
+        axios.put(`https://wise-happy-ferryboat.glitch.me/users/update/${this.state.id}`, user)
         .then(res => {
             alert(res.data)
         })

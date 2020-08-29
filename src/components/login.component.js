@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { useHistory } from 'react-router-dom'
 
 const axios = require('axios')
 
@@ -15,6 +15,7 @@ export default class Login extends Component {
 
     handleLogIn(event) {
         event.preventDefault()
+        
         const form = event.target
         const login = {
             phoneNumber: form.elements['phoneNumber'].value,
@@ -22,7 +23,7 @@ export default class Login extends Component {
         }
 
         axios.post('https://wise-happy-ferryboat.glitch.me/users/login', login).then(res => {
-            window.location = `/profile#${res.data}`
+            window.location = `./profile#${res.data}`
         }).catch(err => {
             console.log(`Error: ${err}`)
         })
